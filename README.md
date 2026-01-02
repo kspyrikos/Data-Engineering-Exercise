@@ -98,7 +98,7 @@ Given more time, I would enhance the project with:
 - Business rule validation (e.g., transaction amounts within expected ranges, valid merchant categories)
 
 **CI/CD & Environments**
-- Multi-environment setup (DEV/TEST/PROD) with environment-specific configurations
+- Multi-environment setup (DEV/TEST/PROD) with environment-specific configurations(variables/secrets) and protection rules.
 - Separate deployment pipelines for each environment with promotion workflows
 - Environment-specific variable management (database connections, S3 buckets, etc.)
 - Integration tests running in PROD/TEST environment before PROD deployment
