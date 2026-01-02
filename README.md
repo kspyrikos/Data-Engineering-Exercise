@@ -24,7 +24,7 @@ Get the dataset from Kaggle and place it in `data/raw/`:
 
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate # .venv/Scripts/activate for Windows
 pip install -r requirements.txt
 ```
 
