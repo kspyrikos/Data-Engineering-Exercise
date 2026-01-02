@@ -1,6 +1,6 @@
 # Credit Card Transaction Pipeline
 
-> **Note**: Built in ~2 hours as a data engineering exercise
+> **Note**: Built in ~2+ hours as a data engineering exercise
 
 A data pipeline implementing the Medallion Architecture (Bronze → Silver → Gold) for credit card transaction analysis and fraud detection.
 
@@ -70,7 +70,9 @@ I used GitHub Copilot during development to accelerate the implementation within
 
 - **Architecture & Design**: I made all decisions regarding the Medallion architecture structure, layer responsibilities, and data flow patterns
 - **Core Implementation**: I wrote the pipeline logic with Copilot's autocomplete suggestions for syntax
+- **Pipeline Orchestration**: I used AI to help structure the main orchestrator (`run_pipeline.py`) and format the console output for better readability
 - **Unit Tests**: Given the time constraint, I leveraged Copilot to generate the test scaffolding and cases for the silver and gold layers, which I then reviewed and validated
+- **Documentation**: I used AI to help draft this README faster, providing structure and content that I then reviewed and customized
 - **Debugging & Refinement**: I handled all debugging, error resolution, and architectural decisions independently
 
 The AI served as a productivity tool to handle repetitive code patterns, but all architectural choices, validation logic, and business rules were my own decisions.
@@ -87,6 +89,12 @@ Given more time, I would enhance the project with:
 - Robust error handling with try/except blocks and proper exception logging
 - Retry logic for transient failures
 - Pre-commit hooks with linting tools to maintain code quality standards during team collaboration
+
+**Data Quality**
+- Schema validation at ingestion using tools like Pydantic
+- Data profiling and anomaly detection to catch unexpected patterns early
+- Referential integrity checks between tables
+- Business rule validation (e.g., transaction amounts within expected ranges, valid merchant categories)
 
 **CI/CD & Environments**
 - Multi-environment setup (DEV/TEST/PROD) with environment-specific configurations
