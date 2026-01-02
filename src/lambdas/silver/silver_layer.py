@@ -84,11 +84,8 @@ def clean_and_validate(bronze_path: str, output_path: str) -> dict:
         'output_file': output_path
     }
     
-    # print(f"[SILVER] Transformation complete:")
-    # print(f"  - Total rows: {metadata['total_rows']:,}")
-    # print(f"  - Valid rows: {metadata['valid_rows']:,} ({metadata['validity_rate']:.2f}%)")
-    
     return metadata
+
 
 # Local testing
 if __name__ == "__main__":
