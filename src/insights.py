@@ -17,8 +17,8 @@ def generate_insights(gold_dir: str) -> dict:
     customer_summary = pd.read_parquet(os.path.join(gold_dir, "customer_summary.parquet"))
     category_analysis = pd.read_parquet(os.path.join(gold_dir, "merchant_category_analysis.parquet"))
     
-    print("\n📊 INSIGHT 1: HIGH-RISK MERCHANT CATEGORIES (Fraud Analysis)")
-    print("-" * 80)
+    print("\n HIGH-RISK MERCHANT CATEGORIES (Fraud Analysis)")
+    print("\n")
     
     # Top fraud categories
     high_fraud = category_analysis.nlargest(5, 'fraud_rate')[
@@ -29,11 +29,10 @@ def generate_insights(gold_dir: str) -> dict:
         print(f"{row['category']:20s} - {row['fraud_rate']:5.2f}% fraud rate "
               f"({row['fraud_count']:,} fraudulent / {row['total_transactions']:,} total)")
     
-    print("\n💡 Recommendation: Implement enhanced verification for these high-risk categories.")
     
-    print("\n" + "=" * 80)
-    print("📊 KEY METRICS SUMMARY")
-    print("-" * 80)
+    
+    print("\n KEY METRICS SUMMARY")
+    print("\n")
     
     total_customers = len(customer_summary)
     total_categories = len(category_analysis)
@@ -54,18 +53,23 @@ def generate_insights(gold_dir: str) -> dict:
         f.write("=" * 80 + "\n")
         f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
         
-        f.write("INSIGHT 1: HIGH-RISK MERCHANT CATEGORIES\n")
-        f.write("-" * 80 + "\n")
-        f.write(high_fraud.to_string(index=False))
-        f.write("\n\nRecommendation: Implement enhanced verification for these high-risk categories.\n\n")
+        f.write("HIGH-RISK MERCHANT CATEGORIES (Fraud Analysis)\n")
+        f.write("\n")
         
-        f.write("KEY METRICS\n")
-        f.write("-" * 80 + "\n")
+        for idx, row in high_fraud.iterrows():
+            f.write(f"{row['category']:20s} - {row['fraud_rate']:5.2f}% fraud rate "
+                    f"({row['fraud_count']:,} fraudulent / {row['total_transactions']:,} total)\n")
+        
+        
+        f.write("KEY METRICS SUMMARY\n")
+        f.write("\n")
         f.write(f"Total Customers: {total_customers:,}\n")
+        f.write(f"Total Merchant Categories: {total_categories}\n")
         f.write(f"Total Transactions: {total_transactions:,}\n")
+        f.write(f"Total Fraudulent Transactions: {total_fraud:,}\n")
         f.write(f"Overall Fraud Rate: {overall_fraud_rate:.2f}%\n")
     
-    print(f"\n📄 Insights report saved to: {report_path}")
+    print(f"\nInsights report saved to: {report_path}")
     
     return {
         'total_customers': total_customers,
