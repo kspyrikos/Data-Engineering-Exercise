@@ -62,7 +62,8 @@ The pipeline generates:
 
 ## CI/CD
 
-GitHub Actions runs tests automatically on push. See `.github/workflows/ci.yml`.
+GitHub Actions runs tests automatically on push.
+
 
 ## AI Tool Usage
 
@@ -71,7 +72,7 @@ I used GitHub Copilot during development to accelerate the implementation within
 - **Architecture & Design**: I made all decisions regarding the Medallion architecture structure, layer responsibilities, and data flow patterns
 - **Core Implementation**: I wrote the pipeline logic with Copilot's autocomplete suggestions for syntax
 - **Pipeline Orchestration**: I used AI to help structure the main orchestrator (`run_pipeline.py`) and format the console output for better readability
-- **Unit Tests**: Given the time constraint, I leveraged Copilot to generate the test scaffolding and cases for the silver and gold layers, which I then reviewed and validated
+- **Unit Tests**: Given the time constraint, I leveraged Copilot to generate the test cases for the silver and gold layers, which I then reviewed and validated
 - **Documentation**: I used AI to help draft this README faster, providing structure and content that I then reviewed and customized
 - **Debugging & Refinement**: I handled all debugging, error resolution, and architectural decisions independently
 
