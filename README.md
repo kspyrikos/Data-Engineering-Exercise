@@ -1,6 +1,6 @@
 # Credit Card Transaction Pipeline
 
-> **Note**: Built in ~2+ hours as a data engineering exercise
+> **Note**: Built in 2+ hours as a data engineering exercise
 
 A data pipeline implementing the Medallion Architecture (Bronze → Silver → Gold) for credit card transaction analysis and fraud detection.
 
