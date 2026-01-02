@@ -1,0 +1,19 @@
+# Git ignore file
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+data_testing.ipynb
+
+# Ignore data files but keep directory structure
+data/bronze/*
+!data/bronze/.gitkeep
+data/silver/*
+!data/silver/.gitkeep
+data/gold/*
+!data/gold/.gitkeep
+data/raw/*
+!data/raw/.gitkeep
+
+tests/unit/__pycache__/*
